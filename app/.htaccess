@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# language starts with PL
+RewriteCond %{HTTP:Accept-Language} ^pl [NC]
+RewriteRule ^$ /pl/ [L,R=301]
+
+# else redirect to the English version
+RewriteRule ^$ /en/ [L,R=301]
